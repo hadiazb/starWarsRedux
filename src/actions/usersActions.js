@@ -10,13 +10,47 @@ export const getAll = () => async (dispatch) => {
 		type: LOADING,
 	});
 	try {
-		const response = await axios.get(
-			'https://swapi.dev/api/people/'
+		const responseOne = await axios.get(
+			'http://swapi.dev/api/people/?page=1'
 		);
-		// console.log(response);
+		const responseTwo = await axios.get(
+			'http://swapi.dev/api/people/?page=2'
+		);
+		const responseThree = await axios.get(
+			'http://swapi.dev/api/people/?page=3'
+		);
+		const responseFour = await axios.get(
+			'http://swapi.dev/api/people/?page=4'
+		);
+		const responseFive = await axios.get(
+			'http://swapi.dev/api/people/?page=5'
+		);
+		const responseSix = await axios.get(
+			'http://swapi.dev/api/people/?page=6'
+		);
+		const responseSeven = await axios.get(
+			'http://swapi.dev/api/people/?page=7'
+		);
+		const responseEight = await axios.get(
+			'http://swapi.dev/api/people/?page=8'
+		);
+		const responseNine = await axios.get(
+			'http://swapi.dev/api/people/?page=9'
+		);
+		const allData = [
+			...responseOne.data.results,
+			...responseTwo.data.results,
+			...responseThree.data.results,
+			...responseFour.data.results,
+			...responseFive.data.results,
+			...responseSix.data.results,
+			...responseSeven.data.results,
+			...responseEight.data.results,
+			...responseNine.data.results,
+		];
 		dispatch({
 			type: GET_ALL,
-			payload: response.data,
+			payload: allData,
 		});
 	} catch (error) {
 		dispatch({

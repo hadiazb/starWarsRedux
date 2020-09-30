@@ -4,15 +4,17 @@ import {
 	Switch,
 	Route,
 } from 'react-router-dom';
-import Layout from './Containers/Layout/index';
+import Layout from './containers/Layout/index';
 import User from './components/Users/index';
+import Planets from './components/Planets/index';
 
 const App = () => {
 	return (
 		<Router>
 			<Layout>
 				<Switch>
-					<Route exact component={User} path='/users' />
+					<Route exact component={User} path='/characters' />
+					<Route exact component={Planets} path='/planets' />
 				</Switch>
 			</Layout>
 		</Router>

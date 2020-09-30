@@ -4,7 +4,7 @@ import './style.css';
 
 const Footer = () => {
 	return (
-		<div className='card-footer navbar-dark bg-dark footer'>
+		<div className=' navbar-dark bg-dark container-fluid d-flex justify-content-between footer'>
 			<Link className='navbar-brand' to='/users'>
 				Users
 			</Link>

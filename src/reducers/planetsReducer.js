@@ -2,10 +2,10 @@ import {
 	GET_ALL,
 	LOADING,
 	ERROR,
-} from '../types/usersTypes';
+} from '../types/planetsTypes';
 
 const INITIAL_STATE = {
-	users: [],
+	planets: [],
 	loading: false,
 	error: '',
 };
@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
 		case GET_ALL:
 			return {
 				...state,
-				users: action.payload,
+				planets: action.payload,
 				loading: false,
 				error: '',
 			};
