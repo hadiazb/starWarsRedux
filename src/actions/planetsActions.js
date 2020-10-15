@@ -13,7 +13,29 @@ export const getAll = () => async (dispatch) => {
 		const responseOne = await axios.get(
 			'http://swapi.dev/api/planets/?page=1'
 		);
-		const allData = [...responseOne.data.results];
+		const responseTwo = await axios.get(
+			'http://swapi.dev/api/planets/?page=2'
+		);
+		const responseThree = await axios.get(
+			'http://swapi.dev/api/planets/?page=3'
+		);
+		const responseFour = await axios.get(
+			'http://swapi.dev/api/planets/?page=4'
+		);
+		const responseFive = await axios.get(
+			'http://swapi.dev/api/planets/?page=5'
+		);
+		const responseSix = await axios.get(
+			'http://swapi.dev/api/planets/?page=6'
+		);
+		const allData = [
+			...responseOne.data.results,
+			...responseTwo.data.results,
+			...responseThree.data.results,
+			...responseFour.data.results,
+			...responseFive.data.results,
+			...responseSix.data.results,
+		];
 		dispatch({
 			type: GET_ALL,
 			payload: allData,
